@@ -1,4 +1,4 @@
-import Item.ComparableItem;
+
 
 public class Item {
 	static String name = "none";

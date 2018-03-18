@@ -117,14 +117,14 @@ public class Midterm {
 	}
 
 	private void sortItems(ArrayList<Item> cargohold) {
-		int index = cargohold.size();
+		/*int index = cargohold.size();
 		
 		if(index <= 1) {
 			System.out.println("The cargohold has too few items to sort.");
 			return;
 		} else {
 			System.out.println(compareTo(cargohold.get(1), cargohold.get(2)));
-		}
+		}*/
 		/*
 		for(int x = 0; x < 5; x++) { //this for loop repeats the sorting process according to the length of the array to enhance sorting accuracy
 			for (int i = 0; i < cargohold.size(); i++) {
