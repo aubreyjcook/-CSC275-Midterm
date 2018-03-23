@@ -66,7 +66,13 @@ public class Midterm {
 		tempItem.setItemName(userInput);
 		System.out.println("Enter the Item's weight");
 		userInput = input.nextLine();
-		tempItem.setItemWeight(userInput);
+		if ((getCargoholdWeight(cargohold) + Integer.parseInt(userInput)) > 25) {
+			System.out.println("The cargohold cannot hold the additional Item's weight.");
+			System.out.println("Remove an item from the cargohold to lower it's weight below 25 or add an item of lower weight.");
+			return;
+		};
+		
+		tempItem.setItemWeight(Integer.parseInt(userInput));
 		System.out.println("Enter the Item's value");
 		userInput = input.nextLine();
 		tempItem.setItemValue(userInput);
@@ -83,9 +89,7 @@ public class Midterm {
 	}
 
 	private void removeItem(ArrayList<Item> cargohold) {
-		int index = cargohold.size();
-		
-		if(index == 0) {
+		if(cargohold.size() == 0) {
 			System.out.println("The cargohold has no items to remove!");
 			return;
 		} else {
@@ -96,16 +100,8 @@ public class Midterm {
 			for(int i = 0; i < cargohold.size(); i++) {
 				cargohold.get(i);
 				if(Item.name.equals(userInput)) {
-					cargohold.get(i);
-					Item.name = "none";
-					cargohold.get(i);
-					Item.weight = "none";
-					cargohold.get(i);
-					Item.value = "none";
-					cargohold.get(i);
-					Item.durability = "none";
-					cargohold.get(i);
-					Item.ID = "none";
+					cargohold.remove(i);
+					
 					System.out.println("Item removed.");
 					break;
 				} else if (i == cargohold.size() - 1) {
@@ -200,5 +196,15 @@ public class Midterm {
 					break;
 			}
 		}
+	}
+	
+	private float getCargoholdWeight(ArrayList<Item> cargohold) {
+		float cargoholdWeight = 0;
+		for(int i = 0; i < cargohold.size(); i++) {
+			cargohold.get(i);
+			cargoholdWeight = cargoholdWeight + Item.weight;
+		};
+		
+		return cargoholdWeight;
 	}
 }

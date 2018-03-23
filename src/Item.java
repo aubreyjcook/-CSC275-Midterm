@@ -2,7 +2,7 @@
 
 public class Item {
 	static String name = "none";
-	static String weight = "none";
+	static float weight = 0;
 	static String value = "none";
 	static String durability = "none";
 	static String ID = "none";
@@ -10,7 +10,7 @@ public class Item {
 	Item(){}
 	
 	//constructor
-	public Item(String itemName, String itemWeight, String itemValue, String itemDurability, String itemID) {
+	public Item(String itemName, float itemWeight, String itemValue, String itemDurability, String itemID) {
 		Item.name = itemName;
 		Item.weight = itemWeight;
 		Item.value = itemValue;
@@ -23,7 +23,7 @@ public class Item {
 		Item.name = newItemName;
 	}
 	
-	public void setItemWeight(String newItemWeight) {
+	public void setItemWeight(float newItemWeight) {
 		Item.weight = newItemWeight;
 	}
 	
@@ -44,7 +44,7 @@ public class Item {
 		return name;
 	}
 	
-	public String getItemWeight() {
+	public float getItemWeight() {
 		return weight;
 	}
 	
