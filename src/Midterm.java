@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
-import java.lang.Comparable;
 
 public class Midterm {
 	Scanner input = new Scanner(System.in);
@@ -61,8 +59,6 @@ public class Midterm {
 	}
 
 	private void addItem(ArrayList<Item> cargohold) {
-		cargohold.add(new Item());
-		int index = cargohold.size(); 
 		Item tempItem = new Item();
 		System.out.println("Enter the Item's name");
 		String userInput = input.nextLine();
@@ -86,7 +82,7 @@ public class Midterm {
 		userInput = input.nextLine();
 		tempItem.setItemID(userInput);
 		
-		cargohold.set(index - 1, tempItem);
+		cargohold.add(tempItem);
 		System.out.println("Item added successfully");
 		return;
 	}
