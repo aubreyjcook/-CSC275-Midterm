@@ -1,4 +1,4 @@
-
+import java.util.Comparator;
 
 public class Item {
 	static String name = "none";
@@ -59,19 +59,18 @@ public class Item {
 	public String getItemID() {
 		return ID;
 	}
-	
-	
-	//comparison object
-	
-	public class ComparableItem extends Item
-	implements Comparable<ComparableItem> {
-		public ComparableItem(String itemName, String itemWeight, String itemValue, String itemDurability, String itemID) {
-			super(name, weight, value, durability, ID);
-		}
-	}
-	
-	public int compareTo(ComparableItem o) {
-		return this.getItemName().compareTo(o.getItemName());
-	}
-	
+
+	public static Comparator<Item> ItemNameComparator = new Comparator<Item>() {
+
+		public int compare(Item i1, Item i2) {
+		   String itemName1 = i1.getItemName().toUpperCase();
+		   String itemName2 = i2.getItemName().toUpperCase();
+
+		   //ascending order
+		   //return itemName1.compareTo(itemName2);
+
+		   //descending order
+		   return itemName2.compareTo(itemName1);
+	    }
+	};
 }

@@ -6,7 +6,7 @@ After pillaging for a few weeks with our new cargo bay upgrade, we decide to bra
 •	We now classify our items by separating them into 3 distinct categories Equipable, Consumable or Weapon. (You must implement these 3 classes that are subclasses of Item and they must have at least 3 unique attributes in each subclass) <-
 •	We can carry an unlimited number of items, as long as they don’t exceed the maximum weight of the cargo bay, 25 Tons. (Use an ArrayList that checks an item’s weight before placing it in the cargo hold) <-
 •	We need to be able to add and remove items by their name. <-
-•	We need to be able to search for a specific type of item in our cargo bay based on the item’s name and one of its attributes (Implement 2 searches – one on name and another on any attribute you choose).
+•	We need to be able to search for a specific type of item in our cargo bay based on the item’s name and one of its attributes (Implement 2 searches – one on name and another on any attribute you choose). <-
 •	We need to be able to sort items by their names alphabetically in descending order (A-Z)
 •	We need to know how many of each item we have in our cargo bay and display their attributes.
 •	We must also add a partial search (think of this as a ‘filter’ option).
