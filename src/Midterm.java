@@ -123,6 +123,7 @@ public class Midterm {
 			// Give the user a list of their options
 			System.out.println("1: Search: Name");      
 			System.out.println("2: Search: Value");
+			System.out.println("3: Partial Search: Name");
                                                                               
 			// Get the user input                                             
 			int userChoice = input.nextInt();                                 
@@ -156,6 +157,20 @@ public class Midterm {
 						}
 					}
 					return;
+				case 3:
+					System.out.println("Enter the name of the item.");
+					String userInput2 = input.nextLine();
+					
+					for(int i = 0; i < cargohold.size(); i++) {
+						cargohold.get(i);
+						if(Item.name.contains(userInput2)) {
+							System.out.println("The item was found at section number " + (i + 1));
+							break;
+						} else if (i == cargohold.size() - 1) {
+							System.out.println("That item is not in the cargohold.");
+						}
+					}
+					return;
 				default:
 					System.out.println("Invalid value. Choose a number 1-2 only.");
 					break;
@@ -164,39 +179,25 @@ public class Midterm {
 	}
 
 	private void displayItems(ArrayList<Item> cargohold) {
-		while (true) {
-			// Give the user a list of their options
-			System.out.println("1: Display all items in the cargohold");
-			System.out.println("2: Display a specific item in the cargohold");
-
-			// Get the user input
-			int userChoice = input.nextInt();
-			input.nextLine();
+		if(cargohold.size() <= 0) {
+			System.out.println("No items in the cargohold to display.");
+			return;
+		}
+		else {
+			for(int i = 0; i < cargohold.size(); i++) {
+				cargohold.get(i);
+				System.out.println(Item.name);
+				cargohold.get(i);
+				System.out.println(Item.weight);
+				cargohold.get(i);
+				System.out.println(Item.value);
+				cargohold.get(i);
+				System.out.println(Item.durability);
+				cargohold.get(i);
+				System.out.println(Item.ID);
 			
-			switch (userChoice) {
-				case 1:
-					//simple output
-					for(int i = 0; i < cargohold.size(); i++) {
-						cargohold.get(i);
-						System.out.println(Item.name);
-						cargohold.get(i);
-						System.out.println(Item.weight);
-						cargohold.get(i);
-						System.out.println(Item.value);
-						cargohold.get(i);
-						System.out.println(Item.durability);
-						cargohold.get(i);
-						System.out.println(Item.ID);
-					
-					}
-					return;
-				case 2:
-					
-					return;
-				default:
-					System.out.println("Invalid value. Choose a number 1-2 only.");
-					break;
 			}
+			return;
 		}
 	}
 	
