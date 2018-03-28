@@ -1,42 +1,44 @@
 import java.util.Comparator;
 
 public class Item {
-	static String name = "none";
-	static float weight = 0;
-	static String value = "none";
-	static String durability = "none";
-	static String ID = "none";
+	String name = "none";
+	float weight = 0;
+	String value = "none";
+	String durability = "none";
+	String ID = "none";
 			
 	Item(){}
 	
 	//constructor
 	public Item(String itemName, float itemWeight, String itemValue, String itemDurability, String itemID) {
-		Item.name = itemName;
-		Item.weight = itemWeight;
-		Item.value = itemValue;
-		Item.durability = itemDurability;
-		Item.ID = itemID;
+		Item item = new Item();
+		
+		item.name = itemName;
+		item.weight = itemWeight;
+		item.value = itemValue;
+		item.durability = itemDurability;
+		item.ID = itemID;
 	}
 	
 	//setter methods
 	public void setItemName(String newItemName) {
-		Item.name = newItemName;
+		this.name = newItemName;
 	}
 	
 	public void setItemWeight(float newItemWeight) {
-		Item.weight = newItemWeight;
+		this.weight = newItemWeight;
 	}
 	
 	public void setItemValue(String newItemValue) {
-		Item.value = newItemValue;
+		this.value = newItemValue;
 	}
 	
 	public void setItemDurability(String newItemDurability) {
-		Item.durability = newItemDurability;
+		this.durability = newItemDurability;
 	}
 	
 	public void setItemID(String newItemID) {
-		Item.ID = newItemID;
+		this.ID = newItemID;
 	}
 	
 	//getter methods

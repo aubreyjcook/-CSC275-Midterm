@@ -96,8 +96,7 @@ public class Midterm {
 			String userInput = input.nextLine();
 			
 			for(int i = 0; i < cargohold.size(); i++) {
-				cargohold.get(i);
-				if(Item.name.equals(userInput)) {
+				if(cargohold.get(i).name.equals(userInput)) {
 					cargohold.remove(i);
 					
 					System.out.println("Item removed.");
@@ -134,8 +133,7 @@ public class Midterm {
 					String userInput = input.nextLine();
 					
 					for(int i = 0; i < cargohold.size(); i++) {
-						cargohold.get(i);
-						if(Item.name.equals(userInput)) {
+						if(cargohold.get(i).name.equals(userInput)) {
 							System.out.println("The item was found at section number " + (i + 1));
 							break;
 						} else if (i == cargohold.size() - 1) {
@@ -147,9 +145,8 @@ public class Midterm {
 					System.out.println("Enter the value of the item.");
 					String userInput1 = input.nextLine();
 					
-					for(int i = 0; i < cargohold.size(); i++) {
-						cargohold.get(i);
-						if(Item.value.equals(userInput1)) {
+					for(int i = 0; i < cargohold.size(); i++) {					
+						if(cargohold.get(i).value.equals(userInput1)) {
 							System.out.println("The item was found at section number " + (i + 1));
 							break;
 						} else if (i == cargohold.size() - 1) {
@@ -162,8 +159,7 @@ public class Midterm {
 					String userInput2 = input.nextLine();
 					
 					for(int i = 0; i < cargohold.size(); i++) {
-						cargohold.get(i);
-						if(Item.name.contains(userInput2)) {
+						if(cargohold.get(i).name.contains(userInput2)) {
 							System.out.println("The item was found at section number " + (i + 1));
 							break;
 						} else if (i == cargohold.size() - 1) {
@@ -184,18 +180,12 @@ public class Midterm {
 			return;
 		}
 		else {
-			for(int i = 0; i < cargohold.size(); i++) {
-				cargohold.get(i);
-				System.out.println(Item.name);
-				cargohold.get(i);
-				System.out.println(Item.weight);
-				cargohold.get(i);
-				System.out.println(Item.value);
-				cargohold.get(i);
-				System.out.println(Item.durability);
-				cargohold.get(i);
-				System.out.println(Item.ID);
-			
+				for(int i = 0; i < cargohold.size(); i++) {
+					System.out.println(cargohold.get(i).name);
+					System.out.println(cargohold.get(i).weight);
+					System.out.println(cargohold.get(i).value);
+					System.out.println(cargohold.get(i).durability);
+					System.out.println(cargohold.get(i).ID);
 			}
 			return;
 		}
@@ -204,8 +194,7 @@ public class Midterm {
 	private float getCargoholdWeight(ArrayList<Item> cargohold) {
 		float cargoholdWeight = 0;
 		for(int i = 0; i < cargohold.size(); i++) {
-			cargohold.get(i);
-			cargoholdWeight = cargoholdWeight + Item.weight;
+			cargoholdWeight = cargoholdWeight + cargohold.get(i).weight;
 		};
 		
 		return cargoholdWeight;
